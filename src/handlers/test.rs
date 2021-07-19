@@ -6,6 +6,13 @@ pub struct Message {
   pub msg: String,
 }
 
+#[derive(Debug, Deserialize, Serialize)]
+pub struct Query {
+  pub id: String,
+  pub name: String,
+  pub datetime: String,
+}
+
 #[get("/test")]
 pub async fn get_test() -> Result<HttpResponse, Error> {
   let msg = Message {
